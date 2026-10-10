@@ -1,0 +1,384 @@
+                                                            AASTHA MALKIN :)
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nine Nights, Nine Wishes ✨</title>
+
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+:root{--gold:#ffd780;--pink:#f8c5df}
+body{font-family:Georgia,serif;background:#160b29;color:#fff4dc}
+button{font-family:inherit;cursor:pointer}
+.scene{min-height:100vh;position:relative;display:flex;align-items:center;justify-content:center;text-align:center;overflow:hidden;padding:24px;background:radial-gradient(ellipse at center,#51265d,#251137 55%,#10091e)}
+#stars{position:absolute;inset:0;pointer-events:none;overflow:hidden}
+.star{position:absolute;color:#ffe8a7;animation:twinkle var(--duration,3s) infinite alternate}
+@keyframes twinkle{from{opacity:.2;transform:scale(.7)}to{opacity:1;transform:scale(1.2)}}
+.garland{position:absolute;top:0;left:0;width:100%;display:flex;justify-content:space-around;font-size:clamp(20px,4vw,36px);padding:10px}
+.content{position:relative;z-index:2;width:min(650px,100%);padding:38px 20px}
+.eyebrow{color:var(--gold);letter-spacing:4px;font-size:12px;text-transform:uppercase;margin-bottom:22px}
+h1{font-size:clamp(38px,8vw,72px);line-height:1.1;color:var(--gold);text-shadow:0 0 28px #e7a85b55;margin-bottom:18px}
+.subtitle{color:#f4d9ec;font-size:clamp(16px,3vw,21px);line-height:1.7;margin:0 auto 30px}
+.emblem{font-size:64px;margin-bottom:22px;filter:drop-shadow(0 0 16px #ffcb68)}
+.gold-button{border:1px solid var(--gold);border-radius:40px;padding:15px 27px;background:linear-gradient(135deg,#ffe6a0,#dca54b);color:#30143a;font-weight:bold;letter-spacing:1px;font-size:13px;box-shadow:0 0 25px #ffcf7040;transition:.2s}
+.gold-button:hover{transform:translateY(-3px);box-shadow:0 0 35px #ffcf7080}
+.bottom-note{margin-top:28px;font-size:12px;color:#d8b9d5;letter-spacing:2px}
+.lamp{font-size:30px;margin-top:28px}
+.navratri-message{min-height:100vh;display:none;align-items:center;justify-content:center;padding:25px;background:linear-gradient(#160b2970,#160b29a8),url("./aastha-bg.jpeg") center/cover no-repeat,radial-gradient(ellipse,#51265d,#160b29 75%);text-align:center}
+.navratri-message.active{display:flex}
+.message-card{width:min(650px,100%);border:1px solid #e8bd7655;background:#21122bd9;border-radius:24px;padding:clamp(25px,6vw,48px);box-shadow:0 0 55px #0004}
+.message-card h2{color:var(--gold);font-size:clamp(30px,6vw,48px);margin:14px 0 22px}
+.message-card p{font-size:17px;line-height:1.9;color:#f5e6f1;margin-bottom:22px}
+#garden{display:none;min-height:100vh;padding:55px 20px 45px;text-align:center;background:radial-gradient(ellipse at top,#49234f,#160b29 70%)}
+#garden.active{display:block}
+.garden-heading{color:var(--gold);font-size:clamp(32px,6vw,52px);margin:12px 0}
+.garden-intro{color:#efd8eb;line-height:1.8;margin:0 auto 35px;max-width:550px}
+.garden-grid{width:min(850px,100%);margin:auto;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
+.diya-card {
+  position: relative;
+  overflow: hidden;
+  border: 1px solid #f5d18b88;
+  border-radius: 18px;
+  padding: 24px 8px;
+  background: linear-gradient(145deg, #39234f99, #160e2aee);
+  color: #fff0cf;
+  transition: transform 0.35s ease, box-shadow 0.35s ease, border-color 0.35s ease;
+  box-shadow: 0 0 15px #f5d18b12, inset 0 0 18px #f5d18b08;
+  animation: diyaGlow 3s ease-in-out infinite alternate;
+}
+
+.diya-card:hover {
+  transform: translateY(-7px) scale(1.03);
+  border-color: #f5d18b;
+  box-shadow: 0 0 28px #f5d18b55, 0 0 55px #b66cff22;
+}
+
+@keyframes diyaGlow {
+  from {
+    box-shadow: 0 0 12px #f5d18b12, inset 0 0 12px #f5d18b08;
+  }
+  to {
+    box-shadow: 0 0 24px #f5d18b35, inset 0 0 18px #f5d18b12;
+  }
+}
+.diya-card:hover{transform:translateY(-5px);border-color:var(--gold);background:#ffffff12}
+.diya-icon {
+  display: block;
+  font-size: clamp(34px, 7vw, 52px);
+  filter: drop-shadow(0 0 8px #ffb347)
+          drop-shadow(0 0 18px #ff8c00);
+  margin-bottom: 12px;
+  transform-origin: center bottom;
+  animation: flameDance 1.8s ease-in-out infinite alternate;
+}
+
+@keyframes flameDance {
+  from {
+    transform: scale(1) rotate(-3deg);
+    filter: drop-shadow(0 0 8px #ffb347)
+            drop-shadow(0 0 14px #ff8c00);
+  }
+  to {
+    transform: scale(1.09) rotate(3deg);
+    filter: drop-shadow(0 0 14px #ffe08a)
+            drop-shadow(0 0 25px #ff8c00);
+  }
+}
+.diya-card strong{display:block;font-size:15px}
+.diya-card small{display:block;margin-top:8px;color:#d9bddc;font-size:12px}
+.footer-note{margin-top:32px;color:#d9bddc;font-size:13px;line-height:1.8}
+.modal{position:fixed;inset:0;z-index:10;display:none;align-items:center;justify-content:center;padding:20px;background:#090411d9;backdrop-filter:blur(8px)}
+.modal.open{display:flex}
+.modal-card{width:min(520px,100%);max-height:85vh;overflow:auto;padding:35px 25px;text-align:center;border:1px solid #e8bd7680;border-radius:24px;background:linear-gradient(145deg,#43204f,#1d1030);box-shadow:0 0 55px #0008}
+.modal-icon{font-size:52px;margin-bottom:15px}
+.modal-card h2{color:var(--gold);margin-bottom:18px}
+.modal-card p{line-height:1.9;color:#f6e7f1;font-size:17px;white-space:pre-line;text-align:left}
+.close-button{margin-top:25px;padding:11px 25px;border:1px solid var(--gold);border-radius:30px;background:transparent;color:var(--gold)}
+#musicBtn{position:fixed;bottom:20px;right:20px;z-index:99999;padding:12px 18px;border-radius:25px;background:#291746;color:#ffd76a;border:1px solid #ffd76a;cursor:pointer}
+@media(max-width:520px){
+ .garden-grid{gap:10px}
+ .diya-card{padding:20px 5px}
+ .diya-card strong{font-size:13px}
+ .diya-card small{font-size:11px}
+ .message-card p{font-size:15px}
+}
+#garden {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+}
+
+.golden-particles {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: -1;
+}
+
+.golden-particles span {
+  position: absolute;
+  bottom: -15px;
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: #ffdf91;
+  box-shadow: 0 0 8px 2px #ffbd59aa;
+  opacity: 0;
+  animation: goldenFloat var(--duration, 8s) linear infinite;
+  animation-delay: var(--delay, 0s);
+  left: var(--left, 50%);
+}
+
+@keyframes goldenFloat {
+  0% {
+    transform: translateY(0) scale(.5);
+    opacity: 0;
+  }
+  15% {
+    opacity: .9;
+  }
+  80% {
+    opacity: .65;
+  }
+  100% {
+    transform: translateY(-100vh) translateX(35px) scale(1.2);
+    opacity: 0;
+  }
+}
+</style>
+</head>
+
+<body>
+<div class="scene" id="intro">
+  <div id="stars"></div>
+  <div class="garland" aria-hidden="true"><span>🌼</span><span>🌺</span><span>🌼</span><span>🌺</span><span>🌼</span><span>🌺</span></div>
+  <div class="content">
+    <div class="eyebrow">A little festive surprise</div>
+    <div class="emblem">🪔</div>
+    <h1>Nine Nights,<br>Nine Wishes</h1>
+    <p class="subtitle">A little light, a little love, and nine wishes made just for you.</p>
+    <button class="gold-button" id="enterButton">ENTER THE CELEBRATION ✨</button>
+    <div class="lamp">🌸 🪔 🌸</div>
+    <p class="bottom-note">MADE WITH WARMTH & GOOD WISHES</p>
+  </div>
+</div>
+
+<section class="navratri-message" id="navratriMessage">
+  <div class="message-card">
+    <div class="emblem">🌺</div>
+    <div class="eyebrow">For Aastha, with warm wishes</div>
+    <h2>Happy Navratri!</h2>
+    <p>May these nine beautiful nights bring you endless happiness, peace, strength, and countless reasons to smile. May Maa Durga bless you with courage to face every challenge, wisdom to choose your path, and strength to achieve everything your heart dreams of.</p>
+    <p>Just as these little diyas light up the darkness, may your life always shine with hope, positivity, love, and beautiful new beginnings.</p>
+    <p>Wishing you and your family a very Happy Navratri! 🌺</p>
+    <button class="gold-button" id="beginWishes">BEGIN THE WISHES ✨</button>
+  </div>
+</section>
+
+<section id="garden">
+  <div class="golden-particles" aria-hidden="true"></div>
+
+  <div class="eyebrow">Nine little lights, nine heartfelt wishes</div>
+  <h2 class="garden-heading">A Garden of Wishes</h2>
+  <p class="garden-intro">
+    Every diya holds a little wish for you. Tap each glowing light to reveal it. 🪔
+  </p>
+
+  <div class="garden-grid" id="gardenGrid"></div>
+
+  <p class="footer-note">
+    May every light remind you that brighter days are always ahead. 🌙
+  </p>
+</section>
+
+<div class="modal" id="wishModal" role="dialog" aria-modal="true" aria-labelledby="wishTitle">
+  <div class="modal-card">
+    <div class="modal-icon" id="wishIcon">🪔</div>
+    <div class="eyebrow" id="wishNumber">WISH 01 OF 09</div>
+    <h2 id="wishTitle">A little wish for you</h2>
+    <p id="wishText"></p>
+    <button class="close-button" id="wishClose">Close this wish ✨</button>
+  </div>
+</div>
+
+<audio id="bgMusic" loop preload="metadata">
+  <source src="./HAPPY WALA NAVRATRI SONG.mpeg" type="audio/mpeg">
+</audio>
+
+<button id="musicBtn" type="button">🎵 Play Music</button>
+
+<script>
+"use strict";
+
+const bgMusic = document.getElementById("bgMusic");
+const musicBtn = document.getElementById("musicBtn");
+bgMusic.volume = 0.25;
+
+musicBtn.addEventListener("click", async () => {
+  if (bgMusic.paused) {
+    try {
+      await bgMusic.play();
+      musicBtn.textContent = "🔊 Pause Music";
+    } catch (error) {
+      console.error(error);
+      alert("Song file isi folder mein honi chahiye aur naam exactly HAPPY WALA NAVRATRI SONG.mpeg hona chahiye.");
+    }
+  } else {
+    bgMusic.pause();
+    musicBtn.textContent = "🎵 Play Music";
+  }
+});
+
+const stars = document.getElementById("stars");
+for (let i = 0; i < 75; i++) {
+  const star = document.createElement("span");
+  star.className = "star";
+  star.textContent = Math.random() > 0.5 ? "✦" : "·";
+  star.style.left = Math.random() * 100 + "%";
+  star.style.top = Math.random() * 100 + "%";
+  star.style.fontSize = (8 + Math.random() * 14) + "px";
+  star.style.setProperty("--duration", (2 + Math.random() * 4) + "s");
+  star.style.animationDelay = (Math.random() * 4) + "s";
+  stars.appendChild(star);
+}
+
+const wishes = [
+  {
+    title: "Happiness",
+    icon: "🌸",
+    text: "May your days be filled with genuine happiness, little moments of magic, and countless reasons to smile. You deserve beautiful memories and a heart that feels light."
+  },
+  {
+    title: "Peace",
+    icon: "🕊️",
+    text: "May your heart always find peace, even on the busiest days. May you have the courage to pause, breathe, and remember that not everything has to be figured out at once."
+  },
+  {
+    title: "Courage",
+    icon: "🦁",
+    text: "May Maa Durga bless you with courage to face every challenge. Never forget how much strength you carry within yourself, even on the days you doubt it."
+  },
+  {
+    title: "Success",
+    icon: "✨",
+    text: "May your efforts turn into achievements and your dreams slowly become reality. May every new step bring you closer to the future you imagine for yourself."
+  },
+  {
+    title: "Beautiful Friendships",
+    icon: "🫶",
+    text: "May you always find people who appreciate your presence, respect your feelings, celebrate your happiness, and make ordinary moments feel special."
+  },
+  {
+    title: "Confidence",
+    icon: "🌟",
+    text: "May you always believe in your own abilities. You do not have to be perfect to be amazing, and you never need to become someone else to be enough."
+  },
+  {
+    title: "New Beginnings",
+    icon: "🌅",
+    text: "May every new beginning bring fresh hope, exciting opportunities, and the strength to leave yesterday's worries behind. There are so many beautiful chapters still waiting for you."
+  },
+  {
+    title: "Endless Blessings",
+    icon: "🙏",
+    text: "May Maa Durga bless you and your family with good health, harmony, prosperity, and protection. May your home always be filled with warmth, laughter, and love."
+  },
+  {
+    title: "A Wish Just for You",
+    icon: "💛",
+    text: `Hi Aastha! 🥹💗
+
+Wishing you a very Happy Navratri! 🪔🌸✨
+
+Pata hi nahi chala ki 2026 ka yeh saal kaise beet gaya. Humein mile hue 11 months se bhi zyada ho gaye hain, aur sach mein, kab itna time nikal gaya, pata hi nahi chala. 🥹
+
+I still remember that date and exact time when i reached you out for the first time "04 December 2025. 09:58pm (IST)". This was the time jab maine aapko pehli baar message kiya tha.
+
+In these months, humne kaafi misunderstandings face ki, kuch ups and downs bhi aaye, but finally, aaj hum achhe dost hain. And honestly, this friendship means a lot to me. It's something I genuinely value. 🫶🏻💛
+
+Mujhe pata hai ki filhaal aapko academics, attendance aur baaki cheezon ko lekar kaafi stress ho raha hai. But hey, it's okay! 🫂🌷 Dheere-dheere sab theek ho jayega. Har cheez ek saath figure out karna zaroori nahi hai, so please khud par itna pressure mat lena.
+
+Filhaal Navratri shuru ho rahi hai, toh thoda sa break lijiye, enjoy kijiye, aur is beautiful festival ko achhe se celebrate kijiye! 🪔❤️ Saal mein ek baar hi toh yeh festival aata hai, toh studies aur stress ke beech thodi khushiyon ke liye bhi time nikaaliye. Hehe! 🌺✨
+
+And honestly, mujhe nahi pata ki maine is little surprise ko kuch zyada hi hype kar diya hai ya nahi 😂😭 Maybe yeh utna grand na ho jitna aap expect kar rahi hongi, but mera sach mein bahut mann tha aapke liye kuch karne ka. Phir meri khopdi mein jo-jo ideas aaye, maine unhe milakar yeh chhota sa surprise bana diya! 🤭💗
+
+I just wanted to do something a little different to make you smile, even if it's just for a moment. I really hope aapko mera yeh chhota sa effort aur wish achha laga hoga. 🥹🫶🏻
+
+So once again, WISHING YOU AND YOUR FAMILY A VERY HAPPY NAVRATRI! 🪔🌸❤️
+
+May Maa Durga bless you with happiness, peace, strength, and success. Keep smiling, take care of yourself, and don't forget to enjoy these nine beautiful nights! ✨💛
+
+A little wish, from a friend who genuinely values this friendship. 🫶🏻🌷`
+  }
+];
+
+const intro = document.getElementById("intro");
+const message = document.getElementById("navratriMessage");
+const garden = document.getElementById("garden");
+const gardenGrid = document.getElementById("gardenGrid");
+const modal = document.getElementById("wishModal");
+const wishTitle = document.getElementById("wishTitle");
+const wishText = document.getElementById("wishText");
+const wishIcon = document.getElementById("wishIcon");
+const wishNumber = document.getElementById("wishNumber");
+
+document.getElementById("enterButton").addEventListener("click", async () => {
+  intro.style.display = "none";
+  message.classList.add("active");
+  window.scrollTo({ top: 0, behavior: "smooth" });
+
+  try {
+    await bgMusic.play();
+    musicBtn.textContent = "🔊 Pause Music";
+  } catch (error) {
+    musicBtn.textContent = "🎵 Play Music";
+    console.warn("Music autoplay was blocked; use the music button.", error);
+  }
+});
+
+document.getElementById("beginWishes").addEventListener("click", () => {
+  message.classList.remove("active");
+  garden.classList.add("active");
+  window.scrollTo({ top: 0, behavior: "smooth" });
+});
+
+wishes.forEach((wish, index) => {
+  const card = document.createElement("button");
+  card.className = "diya-card";
+  card.type = "button";
+  card.innerHTML = `
+    <span class="diya-icon">${wish.icon === "🌸" ? "🪔" : wish.icon}</span>
+    <strong>Wish ${String(index + 1).padStart(2, "0")}</strong>
+    <small>${wish.title}</small>
+  `;
+
+  card.addEventListener("click", () => {
+    wishIcon.textContent = wish.icon;
+    wishNumber.textContent = "WISH " + String(index + 1).padStart(2, "0") + " OF 09";
+    wishTitle.textContent = wish.title;
+    wishText.textContent = wish.text;
+    modal.classList.add("open");
+  });
+
+  gardenGrid.appendChild(card);
+});
+
+function closeWish() {
+  modal.classList.remove("open");
+}
+
+document.getElementById("wishClose").addEventListener("click", closeWish);
+
+modal.addEventListener("click", (event) => {
+  if (event.target === modal) closeWish();
+});
+
+document.addEventListener("keydown", (event) => {
+  if (event.key === "Escape") closeWish();
+});
+</script>
+</body>
+</html>
+```
